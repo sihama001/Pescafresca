@@ -1,0 +1,32 @@
+---- Execute stopdoliwamp.bat 
+NET STOP doliwampapache 
+NET STOP doliwampmysqld 
+---- End script 
+---- Execute uninstall_services.bat 
+---- End script 
+---- Execute install_services.bat 
+Installing the 'doliwampapache' service
+The 'doliwampapache' service is successfully installed.
+Testing httpd.conf....
+Errors reported here must be corrected before the service can be started.
+Running bootstrap
+2024-04-16 22:05:43 0 [Note] c:\dolibarr\bin\mariadb\mariadb10.6.5\bin\mysqld.exe (server 10.6.5-MariaDB) starting as process 78120 ...
+Creating my.ini file
+Removing default user
+Creation of the database was successful
+Service 'doliwampmysqld' successfully installed.
+---- End script 
+---- Execute startdoliwamp.bat 
+NET START doliwampapache 
+Le service doliwampapache d‚marre.
+Le service doliwampapache a d‚marr‚.
+
+NET START doliwampmysqld 
+Le service doliwampmysqld d‚marre..
+Le service doliwampmysqld a d‚marr‚.
+
+---- End script 
+---- Execute mysqlinitpassword.bat to init mysql password 
+For a first installation, if an error is shown here, rerun the script manually. 
+For an update, you will get an "Access denied" error, ignore this error. 
+---- End script 
